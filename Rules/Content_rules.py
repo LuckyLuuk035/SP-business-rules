@@ -5,8 +5,8 @@ from _functions.config import config
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
 
+# Run contentFilter 1x om dat tabel aan te maken waaruit de recommendations worden gekozen.
 def contentFilter():
-    # Pas deze regel aan om de database aan te passen
     commands = ["DROP TABLE contentFilter",
                 "CREATE TABLE contentFilter AS SELECT idproducts, Concat(category, doelgroep, target) AS combined  FROM products ORDER BY combined"]
     db = config()
@@ -19,3 +19,4 @@ def contentFilter():
         con.commit()
     con.close()
     return
+

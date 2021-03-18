@@ -6,8 +6,8 @@
 # from classes.send_data import DataSender
 # from classes.sessions_filter import FilterSessions
 
-from Rules.Collab_rules import collaborativeFilter
 from Rules.Content_rules import contentFilter
+from Rules.Collab_rules import collaborativeFilter
 
 
 #
@@ -56,5 +56,5 @@ from Rules.Content_rules import contentFilter
 
 # ---------------------------------------------------------------------------
 
-collaborativeFilter()
 contentFilter()
+collaborativeFilter()
