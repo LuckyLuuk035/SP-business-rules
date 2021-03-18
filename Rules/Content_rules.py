@@ -25,8 +25,7 @@ pseudocode for content filtering
 def contentFilter():
     # Pas deze regel aan om de database aan te passen
     commands = ["DROP TABLE contentFilter",
-                "CREATE TABLE contentFilter AS SELECT idproducts, category, doelgroep, target FROM products",
-                "SELECT idproducts, Concat(category, doelgroep, target) AS combined FROM contentFilter ORDER BY combined;"]
+                "CREATE TABLE contentFilter AS SELECT idproducts, Concat(category, doelgroep, target) AS combined  FROM products ORDER BY combined"]
     db = config()
     con = psycopg2.connect(**db)
     cursor = con.cursor()
