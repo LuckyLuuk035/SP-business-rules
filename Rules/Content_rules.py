@@ -18,4 +18,3 @@ def contentFilter():
         con.commit()
     con.close()
     return
-
