@@ -15,3 +15,7 @@ pseudocode for content filtering
 5. recommendations geven
 
 """
+
+def contentFilter():
+
+    return

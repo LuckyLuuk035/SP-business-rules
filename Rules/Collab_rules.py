@@ -12,3 +12,8 @@ pseudocode for collab filtering
 3. linken in koppeltabel content
 4. recommandaties geven
 """
+
+
+def collaborativeFilter():
+
+    return

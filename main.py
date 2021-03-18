@@ -6,6 +6,8 @@
 # from classes.send_data import DataSender
 # from classes.sessions_filter import FilterSessions
 
+from Rules.Collab_rules import collaborativeFilter
+from Rules.Content_rules import contentFilter
 
 
 #
@@ -50,3 +52,9 @@
 # filter_sessions.save_dataframe()
 #
 # data_sender.copy_sessions_csv(pathname=r'C:\Users\Luuk\PycharmProjects\SP-business-rules\sessions.csv')
+
+
+# ---------------------------------------------------------------------------
+
+collaborativeFilter()
+contentFilter()
