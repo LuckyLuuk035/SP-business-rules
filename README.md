@@ -6,4 +6,5 @@ Als mensen naar een bepaald product kijken ze ook geinterresseerd kunnen zijn in
 Al deze kolommen worden dan samen gevoeg tot 1 kolom (combined genoemd) en samen met de product ID in een nieuwe tabel gezet genaamd contentFilter.
 
 
-Voor de Collaborative Filtering kijken we naar de users die...
+Voor de Collaborative Filtering missen we helaas alle data die nodig is om een goede recommendation te maken.
+We hebben namelijk alleen een klantenid maar niks wat het koppelt aan een product dat is gekocht.

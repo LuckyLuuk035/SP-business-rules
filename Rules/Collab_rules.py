@@ -1,3 +1,8 @@
+import psycopg2
+
+from _functions.config import config
+from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
+
 """
 pseudocode for collab filtering
 
@@ -15,5 +20,15 @@ pseudocode for collab filtering
 
 
 def collaborativeFilter():
+    commands = ["DROP TABLE IF EXISTS collaborativeFilter",
+                "CREATE TABLE collaborativeFilter AS SELECT idvisitors, typevisitors FROM visitors ORDER BY typevisitors"]
+    db = config()
+    con = psycopg2.connect(**db)
+    cursor = con.cursor()
+    con.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 
+    for command in commands:
+        cursor.execute(command)
+        con.commit()
+    con.close()
     return
