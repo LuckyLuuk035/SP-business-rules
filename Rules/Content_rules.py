@@ -24,11 +24,14 @@ pseudocode for content filtering
 
 def contentFilter():
     # Pas deze regel aan om de database aan te passen
-    commands = ["CREATE TABLE contentFilter AS SELECT idproducts, category, doelgroep, target FROM products"]
+    commands = ["DROP TABLE contentFilter",
+                "CREATE TABLE contentFilter AS SELECT idproducts, category, doelgroep, target FROM products",
+                "SELECT idproducts, Concat(category, doelgroep, target) AS combined FROM contentFilter ORDER BY combined;"]
     db = config()
     con = psycopg2.connect(**db)
     cursor = con.cursor()
     con.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+
     for command in commands:
         cursor.execute(command)
         con.commit()
